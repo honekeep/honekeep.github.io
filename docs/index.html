@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Honekeep</title>
+<meta name="description" content="Honekeep — an independent software engineering organization.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><polygon points="4,6 22,6 28,12 28,26 4,26" fill="none" stroke="%2316181a" stroke-width="3.5" stroke-linejoin="round"/></svg>'>
+<style>
+  :root {
+    --ink: #16181a;
+    --paper: #fafaf8;
+    --steel: #5b7c8d;
+    --muted: #7d8286;
+    --hairline: #e2e1dd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e8e7e3;
+      --paper: #131416;
+      --steel: #7fa3b5;
+      --muted: #83888c;
+      --hairline: #2a2c2f;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  main {
+    width: min(30rem, 100%);
+  }
+  .mark {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 2.25rem;
+  }
+  .mark polygon { stroke: var(--ink); }
+  .mark .inner { fill: var(--steel); stroke: none; }
+  h1 {
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    line-height: 1;
+  }
+  h1 .keep { color: var(--steel); }
+  .edge {
+    width: 6.5rem;
+    height: 1px;
+    background: var(--hairline);
+    margin: 1.75rem 0;
+    position: relative;
+  }
+  .edge::after {
+    content: "";
+    position: absolute;
+    right: -14px;
+    top: -7px;
+    width: 20px;
+    height: 1px;
+    background: var(--steel);
+    transform: rotate(-45deg);
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 26rem;
+  }
+  footer {
+    margin-top: 3.5rem;
+    font-family: ui-monospace, "Cascadia Code", "JetBrains Mono", Menlo, monospace;
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+    display: flex;
+    gap: 1.75rem;
+  }
+  footer a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 2px;
+    transition: border-color 0.15s ease;
+  }
+  footer a:hover, footer a:focus-visible {
+    border-color: var(--steel);
+    outline: none;
+  }
+  footer span { color: var(--muted); }
+  @media (prefers-reduced-motion: no-preference) {
+    main { animation: rise 0.5s ease-out both; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: none; }
+    }
+  }
+</style>
+</head>
+<body>
+<main>
+    <svg viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(8,8) scale(2.667)">
+        <polygon points="3,4 18,4 3,19" fill="#f3f3f4"></polygon>
+        <polygon points="21,5 21,20 6,20" fill="none" stroke="#f3f3f4" stroke-width="2.5" stroke-linejoin="miter"></polygon>
+      </g>
+      <text x="90" y="53" font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="36" font-weight="500" fill="#f3f3f4" letter-spacing="0.5">honekeep</text>
+    </svg>
+  <div class="edge" aria-hidden="true"></div>
+  <p>An independent software engineering organization. Tools in the works — honed before they ship.</p>
+  <footer>
+    <a href="https://github.com/honekeep">github.com/honekeep</a>
+    <span>&copy; 2026 Honekeep</span>
+  </footer>
+</main>
+</body>
+</html>
